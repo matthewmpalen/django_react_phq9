@@ -85,6 +85,19 @@ class ConcentrationIssuesFields extends QuestionFields {}
 class ActivityChangeFields extends QuestionFields {}
 class SuicidalThoughtsFields extends QuestionFields {}
 
+var ContactButton = React.createClass({
+  handleClick: function() {
+    alert("Message has been sent.");
+  }, 
+
+  render: function() {
+    return (
+      <button className="btn btn-default btn-block" onClick={this.handleClick}>
+        Contact
+      </button>
+    )
+  }
+});
 
 var ResultsComponent = React.createClass({
   render: function() {
@@ -134,51 +147,53 @@ var ResultsComponent = React.createClass({
               treatment
             </h3>
 
-            <a href="#">
-              <div className="col-sm-4">
-                <div className="thumbnail">
-                  <img src="//placehold.it/300x200" alt="doctor" />
-                  <div className="caption">
-                    <address>
-                      <strong>John Doe</strong><br/>
-                      123 Fake Street<br/>
-                      New York, NY 10282<br/>
-                      <abbr title="Phone">P:</abbr> 212-111-7777
-                    </address>
-                  </div>
+            <div className="col-sm-4">
+              <div className="thumbnail">
+                <img src="//placehold.it/300x200" alt="doctor" />
+                <div className="caption">
+                  <address>
+                    <strong>John Doe</strong><br/>
+                    123 Fake Street<br/>
+                    New York, NY 10282<br/>
+                    <abbr title="Phone">P:</abbr> 212-111-7777
+                  </address>
+
+                  <ContactButton />
                 </div>
               </div>
-            </a>
+            </div>
 
-            <a href="#">
-              <div className="col-sm-4">
-                <div className="thumbnail">
-                  <img src="//placehold.it/300x200" alt="doctor" />
-                  <div className="caption">
+            <div className="col-sm-4">
+              <div className="thumbnail">
+                <img src="//placehold.it/300x200" alt="doctor" />
+                <div className="caption">
+                  <address>
                     <strong>Tim Bo</strong><br/>
                     45 River Road<br/>
                     Jersey City, NJ 07310<br/>
                     <abbr title="Phone">P:</abbr> 201-111-7777
-                  </div>
-                </div>
-              </div>
-            </a>
+                  </address>
 
-            <a href="#">
-              <div className="col-sm-4">
-                <div className="thumbnail">
-                  <img src="//placehold.it/300x200" alt="doctor" />
-                  <div className="caption">
-                    <address>
-                      <strong>Kim Jo</strong><br/>
-                      111 Kings Road<br/>
-                      New York, NY 10283<br/>
-                      <abbr title="Phone">P:</abbr> 646-111-7777
-                    </address>
-                  </div>
+                  <ContactButton />
                 </div>
               </div>
-            </a>
+            </div>
+
+            <div className="col-sm-4">
+              <div className="thumbnail">
+                <img src="//placehold.it/300x200" alt="doctor" />
+                <div className="caption">
+                  <address>
+                    <strong>Kim Jo</strong><br/>
+                    111 Kings Road<br/>
+                    New York, NY 10283<br/>
+                    <abbr title="Phone">P:</abbr> 646-111-7777
+                  </address>
+
+                  <ContactButton />
+                </div>
+              </div>
+            </div>
 
           </div>
         </div>
@@ -230,10 +245,6 @@ var Questionnaire = React.createClass({
     this.setState({
       step: this.state.step + 1
     });
-
-    console.log("Little interest: " + fieldValues.little_interest + 
-        "\nDepression: " + fieldValues.depression + 
-        "\nSleep issues: " + fieldValues.sleep_issues);
   }, 
 
   previousStep: function() {
