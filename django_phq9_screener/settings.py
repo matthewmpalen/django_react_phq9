@@ -16,7 +16,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles', 
     # External
-    #'pipeline', 
     'rest_framework', 
     # Local
     'django_phq9_screener', 
@@ -89,12 +88,10 @@ USE_L10N = True
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
-#STATIC_ROOT = normpath(join(dirname(BASE_DIR), 'static'))
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(BASE_DIR, 'static'), 
 )
-#STATICFILES_DIRS = ()
 
 # External
 REST_FRAMEWORK = {
@@ -109,38 +106,3 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly', 
     )
 }
-
-"""
-# django-pipeline
-STATICFILES_STORAGE = 'pipeline.storage.PipelineCachedStorage'
-
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder', 
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder', 
-    'pipeline.finders.PipelineFinder'
-)
-
-# browserify
-PIPELINE = {
-    'PIPELINE_ENABLED': True, 
-    'COMPILERS': (
-        'pipeline_browserify.compiler.BrowserifyCompiler', 
-    ), 
-    'CSS_COMPRESSOR': 'pipeline.compressors.NoopCompressor', 
-    'JS_COMPRESSOR': 'pipeline.compressors.uglifyjs.UglifyJSCompressor', 
-    'JAVASCRIPT': {
-        'phq9_screener_js': {
-            'source_filenames': (
-                'bower_components/jquery/dist/jquery.min.js', 
-                'bower_components/react/JSXTransformer.js', 
-                'bower_components/react/react-with-addons.js' 
-            ), 
-
-            'output_filename': 'phq9_site.js'
-        } 
-    }
-}
-
-if DEBUG:
-    PIPELINE['BROWSERIFY_ARGUMENTS'] = '-t [ babelify --presets [ react ] ]'
-"""
