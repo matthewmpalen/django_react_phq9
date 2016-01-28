@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load staticfiles %}
+
+{% block head_title %}{% trans 'PHQ9 Screener' %}{% endblock %}
+
+{% block body_content %}
+<div class="row spacer">
+  <div class="container">
+    <div class="jumbotron">
+      <h1>PHQ9 Screener</h1>
+    </div>
+  </div>
+</div><!-- .row -->
+
+<div id="phq9" class="row">
+</div>
+{% endblock %}
+
+{% block extra_js_scripts %}
+<script type="text/babel" src="{% static 'questionnaire/phq9.js' %}"></script>
+{% endblock %}

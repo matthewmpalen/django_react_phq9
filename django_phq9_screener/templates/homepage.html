@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block head_title %}{% trans 'Welcome!' %}{% endblock %}
+
+{% block body_content %}
+<div class="row spacer">
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Screener</h1>
+      <p>
+        Whenever you're ready, please continue to the questionnaire: 
+        <a class="btn btn-success btn-lg" href="{% url 'phq9_screener' %}">
+          <span class="glyphicon glyphicon-pencil"></span>
+          Start
+        </a>
+      </p>
+    </div>
+  </div>
+</div><!-- .row spacer -->
+{% endblock %}

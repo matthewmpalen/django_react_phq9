@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mental wellness">
+    <meta name="author" content="Matt">
+    
+    <title>{% block head_title %}Title{% endblock %}</title>
+    {% include '_head.html' %}
+  </head>
+  <body>
+    {% block body %}
+      {% block navbar %}
+        {% include '_navbar.html' %}
+      {% endblock %}
+
+      {% block body_content %}
+      {% endblock %}
+
+      {% block js_scripts %}
+        {% include '_js_scripts.html' %}
+        {% block extra_js_scripts %}{% endblock %}
+      {% endblock %}
+    {% endblock %}
+  </body>
+</html>
